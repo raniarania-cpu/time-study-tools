@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Study Tool - Nindah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="foto-container">
+        <div id="profileImageContainer">
+          <img id="profileImage" src="profil.png" alt="Foto Profil" class="foto-profil" />
+        </div>
+        <input type="file" id="fileInput" onchange="previewImage(event)" style="display: none;" />
+        <button id="uploadButton" onclick="document.getElementById('fileInput').click()">Choose Photo</button>
+      </div>
+      <div class="profil-text">
+        <h1>Nindah Rania Azahra</h1>
+        <p>Industrial Engineering | Efficiency | Web Development Enthusiast</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="time-study-tool">
+    <div class="container">
+      <h2>Time Study Tool</h2>
+
+      <!-- Allowance Input -->
+      <div>
+        <label for="globalAllowance">Allowance (%):</label>
+        <input type="number" id="globalAllowance" placeholder="Masukkan Allowance (%)" onchange="hitungSemua()" />
+      </div>
+
+      <table id="inputTable">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Proses</th>
+            <th>CT (detik)</th>
+            <th>CT + Allowance</th>
+            <th>Jumlah Kapasitas / Hari (8 Jam)</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button onclick="tambahBaris()">+ Tambah Baris</button>
+      <button onclick="jumlahkanKapasitas()">Jumlah Kapasitas per Proses</button>
+
+      <h3>Hasil</h3>
+      <div id="hasilTabel"></div>
+      <div id="rekapProses" style="margin-top: 20px;"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
